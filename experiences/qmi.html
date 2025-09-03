@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Co-op Experience - Quantum Matter Institute</title>
+  <!-- Link to your external CSS file -->
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <h1>Co-op at the Quantum Matter Institute</h1>
+  <p style="opacity: 0.5;">
+    My most recent co-op experience was at the Quantum Matter Institute at UBC, where I worked in an Ultra Fast Laser lab on a dual-comb spectroscopy experiment.
+  </p>
+
+  <p style="display: flex; align-items: center; gap: 8px; color: #eda0a0; font-size: 24px;">
+    <span style="font-weight: bold;">Tags:</span>
+    <label>FPGA</label>
+    <label>Vivado</label>
+    <label>SystemVerilog</label>
+  </p>
+
+  <h2>Learnings Summary</h2>
+  <p>
+    From this co-op experience, I gained hands-on experience with the Vivado design suite, AMD Zynq SoCs, Python GUIs, and some introductory knowledge of laser/photonics setups.
+  </p>
+
+  <h2>The Project</h2>
+  <p>
+    For this dual-comb spectroscopy experiment, I was tasked with developing RTL for a <strong>Red Pitaya</strong> (Zynq SoC platform) in order to control the timing of trigger signals to an ablation laser and a data acquisition card (DAQ). 
+    There was also a software component to this project, as I was to develop a Python GUI that was able to control/configure the Red Pitaya as well as the data acquisition card.
+  </p>
+
+  <h2>The Hardware</h2>
+  <p>
+    The main goal in developing the hardware was to recreate the following timing diagram. Without getting into specifics, the idea was to take the “Delta Frep Signal” as a reference pulse and use it to generate the “Ablation Trigger Signal” and “DAQ Trigger Signal” pulses with a configurable delay that would be output from the Red Pitaya’s GPIO pins.
+  </p>
+  <img src="/assets/img/qmi/timing.png" alt="Timing Diagram">
+
+  <p>
+    To achieve this, I custom wrote RTL and verified the results both in simulation (testbenches and Vivado’s simulator) and in real time by using an oscilloscope to view the signals.
+  </p>
+
+  <img src="/assets/img/qmi/comparison.png" alt="Vivado Simulation">
+  <p class="caption">Vivado Simulation</p>
+
+  <img src="/assets/img/qmi/scope-trace-verify.jpg" alt="Scope traces of GPIO pins">
+  <p class="caption">Scope traces of the GPIO pins</p>
+
+  <h2>The GUI</h2>
+  <p>
+    The significance of the GUI I developed was to combine configuration/operation of the instruments involved with timing (RTL) and data acquisition (DAQ card) into a single GUI. This allowed a much more streamlined setup process and operation for the timing and data acquisition components of the experiment. Below is a screenshot of some of the elements of the GUI.
+  </p>
+
+  <p>Significant features outside of pure operation include:</p>
+  <ul>
+    <li>Data pre-formatting</li>
+    <li>Data pre-processing</li>
+    <li>Peak finding</li>
+  </ul>
+
+  <img src="/assets/img/qmi/gui.png" alt="Python GUI Screenshot">
+</body>
+</html>
